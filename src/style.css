@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&display=swap");
+
+body {
+  font-family: "Life Savers", serif;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+select,
+input {
+  font-family: "Life Savers", serif;
+  font-weight: bold;
+  font-size: 90%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Ranchers", fantasy;
+  font-weight: 400;
+}
+
+/**
+ * This is a common style for code.
+ *
+ */
+code {
+  background-color: lightblue;
+  border-radius: 0.3em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  color: blue;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 400;
+  font-size: 85%;
+}
+
+a:visited {
+  color: #c000c0;
+}
+
+#container1 {
+  perspective: 30em;
+  perspective-origin: center;
+  position: relative;
+}
+
+.side {
+  height: 3lh;
+  width: 3lh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center; /* Centers content vertically */
+  position: absolute;
+}
+
+.top {
+  background-color: hwb(0 50% 0%);
+  transform: translateY(-3lh) rotateX(90deg);
+  transform-origin: bottom;
+  top: 0;
+  left: 0;
+}
+.left {
+  background-color: hwb(0 33% 0%);
+  transform: translateX(-3lh) rotateY(-90deg);
+  transform-origin: right;
+  top: 0;
+  left: 0;
+}
+.right {
+  background-color: hwb(0 0% 10%);
+  transform: rotateY(90deg);
+  transform-origin: left;
+  top: 0;
+  left: 3lh;
+}
+.front {
+  background-color: red;
+}
+.back {
+  background-color: greenyellow;
+  transform: translateZ(-3lh);
+  z-index: -10;
+}
+.bottom {
+  transform: rotateX(-90deg) translateY(3lh);
+  transform-origin: bottom;
+  background-color: hwb(0 0% 25%);
+}
+
+.cube {
+  transform-style: preserve-3d;
+  transform: translate(3lh, 3lh);
+}
