@@ -48,6 +48,7 @@ a:visited {
   perspective: 30em;
   perspective-origin: center;
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .side {
@@ -58,6 +59,7 @@ a:visited {
   text-align: center;
   align-items: center; /* Centers content vertically */
   position: absolute;
+  backface-visibility: hidden;
 }
 
 .top {
@@ -97,5 +99,6 @@ a:visited {
 
 .cube {
   transform-style: preserve-3d;
-  transform: translate(3lh, 3lh);
+  transform: translateZ(0) translate(3lh, 3lh);
+  position: absolute;
 }
