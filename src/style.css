@@ -45,7 +45,7 @@ a:visited {
 }
 
 #container1 {
-  perspective: 30em;
+  perspective: 90em;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -62,39 +62,55 @@ a:visited {
 
 .top {
   background-color: hwb(0 50% 0%);
-  transform: translateY(-3lh) rotateX(90deg);
+  transform: translateY(-3lh) rotateX(90deg) translateY(1.5lh);
   transform-origin: bottom;
   top: 0;
   left: 0;
 }
 .left {
   background-color: hwb(0 33% 0%);
-  transform: translateX(-3lh) rotateY(-90deg);
+  transform: translateX(-3lh) rotateY(-90deg) translateX(1.5lh);
   transform-origin: right;
   top: 0;
   left: 0;
 }
 .right {
   background-color: hwb(0 0% 10%);
-  transform: rotateY(90deg);
+  transform: rotateY(90deg) translateX(-1.5lh);
   transform-origin: left;
   top: 0;
   left: 3lh;
 }
 .front {
   background-color: red;
+  transform: translateZ(1.5lh);
 }
 .bottom {
-  transform: rotateX(-90deg) translateY(3lh);
+  transform: rotateX(-90deg) translateY(3lh) translateY(-1.5lh);
   transform-origin: bottom;
   background-color: hwb(0 0% 25%);
 }
 .back {
   background-color: greenyellow;
-  transform: translateZ(-3lh);
+  transform: translateZ(-1.5lh);
   z-index: -10;
 }
 
 .cube {
   transform-style: preserve-3d;
+  position: absolute;
+  width: 3lh;
+  height: 3lh;
+  transform-origin: center;
+}
+
+@property --rotation {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0turn;
+}
+
+#help {
+  position:absolute;
+  bottom: 0;
 }
