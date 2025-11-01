@@ -6,11 +6,11 @@ const masterCube = querySelector(".cube", HTMLDivElement);
 const parent = assertNonNullable(masterCube.parentElement);
 masterCube.remove();
 
-for (let z = -7; z < 0; z++) {
+for (let z = -5; z < 0; z++) {
   const translateZ = `${z * 6}lh`;
-  for (let x = 0; x < 7; x++) {
+  for (let x = 0; x < 5; x++) {
     const translateX = `${x * 6}lh`;
-    for (let y = 0; y < 7; y++) {
+    for (let y = 0; y < 5; y++) {
       const translateY = `${y * 6}lh`;
       const clone = assertClass(masterCube.cloneNode(true), HTMLDivElement);
       clone.style.transform = `translateX(${translateX}) translateY(${translateY}) translateZ(${translateZ})`;
@@ -20,10 +20,12 @@ for (let z = -7; z < 0; z++) {
 }
 
 const container = getById("container1", HTMLDivElement);
+/*
 let current:
   | undefined
   | { x: number; y: number; lastUpdate: DOMHighResTimeStamp };
 let desired: undefined | { x: number; y: number };
+*/
 
 document.addEventListener("mousemove", (event: MouseEvent) => {
   const rect = container.getBoundingClientRect();
@@ -31,9 +33,11 @@ document.addEventListener("mousemove", (event: MouseEvent) => {
   // Calculate the mouse position relative to the container
   const x = event.clientX - rect.left;
   const y = event.clientY - rect.top;
-  desired = { x, y };
+  container.style.perspectiveOrigin = `${x}px ${y}px`;
+  //desired = { x, y };
 });
 
+/*
 const animationLoop = new AnimationLoop((time) => {
   const halfLife = 150;
   if (desired) {
@@ -50,6 +54,7 @@ const animationLoop = new AnimationLoop((time) => {
   }
 });
 (window as any).animationLoop = animationLoop;
+*/
 
 /**
  * z order is always my problem.
