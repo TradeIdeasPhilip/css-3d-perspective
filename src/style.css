@@ -102,6 +102,15 @@ a:visited {
   width: 3lh;
   height: 3lh;
   transform-origin: center;
+  pointer-events: auto;
+}
+
+#stage {
+  transform-style: preserve-3d;
+  position: absolute;
+  transform-origin: center;
+  pointer-events: none;
+  transition: transform 1.5s;
 }
 
 @property --rotation {
@@ -111,6 +120,6 @@ a:visited {
 }
 
 #help {
-  position:absolute;
+  position: absolute;
   bottom: 0;
 }

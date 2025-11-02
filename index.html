@@ -9,16 +9,22 @@
   </head>
   <body>
     <div id="container1">
-      <div class="cube">
-        <div class="top side">Top</div>
-        <div class="front side">Front</div>
-        <div class="bottom side">Bottom</div>
-        <div class="left side">Left</div>
-        <div class="right side">Right</div>
+      <div id="stage">
+        <div class="cube">
+          <div class="top side">Top</div>
+          <div class="front side">Front</div>
+          <div class="bottom side">Bottom</div>
+          <div class="left side">Left</div>
+          <div class="right side">Right</div>
+        </div>
       </div>
     </div>
     <p id="help">
-      Click to spin.
+      <label><input type="radio" name="rotateStage" value="45" />◆</label>
+      <label
+        ><input type="radio" name="rotateStage" value="0" checked />■</label
+      >
+      &nbsp; Click to spin.&nbsp;
       <a href="https://github.com/TradeIdeasPhilip/css-3d-perspective"
         >More info</a
       >.
