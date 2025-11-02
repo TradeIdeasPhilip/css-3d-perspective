@@ -13,7 +13,7 @@ masterCube.remove();
 /**
  * x ranges from 0 to width - 1.
  */
-const width = 9;
+const width = 7;
 
 /**
  * y ranges from 0 to height - 1.
@@ -23,7 +23,7 @@ const height = 5;
 /**
  * z ranges from 0 to depth - 1
  */
-const depth = 9;
+const depth = 7;
 
 const allCubes = initializedArray(width, () =>
   initializedArray(height, () =>
@@ -40,7 +40,7 @@ for (let z = 0; z < depth; z++) {
   const translateZ = `${(z - depth) * period}lh`;
   allTranslateZ.add(translateZ);
   for (let x = 0; x < width; x++) {
-    const translateX = `${x * period}lh`;
+    const translateX = `${(x + 1) * period}lh`;
     for (let y = 0; y < height; y++) {
       const translateY = `${y * period}lh`;
       const clone = assertClass(masterCube.cloneNode(true), HTMLDivElement);
@@ -63,7 +63,7 @@ console.log([...allTranslateZ]);
   // I don't have an exact formula for this.
   // I got this by trial and error.
   // This causes it to rotate around its center.
-  const doRotate = `translateZ(-30lh) rotateY(45deg) translateZ(30lh)`;
+  const doRotate = `translateZ(-27lh) rotateY(45deg) translateZ(27lh)`;
   function updateRotateFromGUI() {
     const choice = querySelector(
       '[name="rotateStage"]:checked',

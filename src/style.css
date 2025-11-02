@@ -58,6 +58,7 @@ a:visited {
   text-align: center;
   align-items: center; /* Centers content vertically */
   position: absolute;
+  backface-visibility: hidden;
 }
 
 .top {
